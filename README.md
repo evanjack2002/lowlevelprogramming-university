@@ -10,7 +10,9 @@
     * [Linux kernel and device driver](#Linux-kernel-and-device-driver)
       * [Read carefully](#Read-carefully)
       * [References](#References)
+    * [Other applications](#Other-applications)
   * [Future of low level programming](#Future-of-low-level-programming)
+  * [Job](#Job)
 * [Translation](#Translation)
 
 # <a name="Low-Level-Programming-University"></a>Low-Level Programming University
@@ -47,13 +49,27 @@ There are two background theories to low-level programming:
 * Computer Architecture
 * Operating Systems
 
-You can find many good classes on online universities, for instance, Coursera.org and edx.org.
+I think the better way to learn theory is taking course. Reading books is not bad but taking too much time and effort. You can find many good classes on online universities, for instance, Coursera.org and edx.org.
 Theory is theory. I don't think you should get A+ in the class, just understand the big picture in the class.
 You'll get better and better with experience.
+
+Let me introduce several books that I've read. They are commonly used for text book in the universities. If there is no class with those books in your university, it's worth to spend some time for those.
+* Computer Architecture
+  * Computer Architecture, Fifth Edition: A Quantitative Approach
+  * Computer Systems: A Programmer's Perspective
+  * Computer Organization and Design, Fourth Edition: The Hardware/Software Interface
+* Operating Systems
+  * The Magic Garden Explained: The Internals of UNIX System V Release 4 an Open Systems Design
+  * The Design of the UNIX Operating System
+  * Operating Systems: Internals and Design Principles by William Stallings
+
+There is infinite list of good books. I don't want to say that you should read many books. Just read one book carefully. Whenevery you learn a theory, implement simulation code of it. **Implementing one thing is better than knowing one hundread theories.**
 
 ##  <a name="Languages"></a>Languages
 
 ### <a name="Assembly"></a>Assembly
+
+Choose one between x86 or ARM. No need to know both. It doesn't matter to know assembly language. The essential is knowing the internal of CPU and computer. So you don't need to practice the assembly of the latest CPU. Select 8086 or Corex-M.
 
 * [8086 assembly programming with emu8086](https://github.com/gurugio/book_assembly_8086)
   * basic concepts of CPU and computer architecture
@@ -67,6 +83,7 @@ You'll get better and better with experience.
 * Computer Organization and Design
   * [MIPS Edition](https://www.amazon.ca/Computer-Organization-Design-MIPS-Interface/dp/0124077269/)
   * [ARM Edition](https://www.amazon.ca/Computer-Organization-Design-ARM-Interface/dp/0128017333/)
+  * [RISC-V Edition](https://www.amazon.com/Computer-Organization-Design-RISC-V-Architecture/dp/0128122757)
   * Academic books that explain how every component of a computer work from the ground up.
   * Explains in details the different concepts that make up computer architecture.
   * They are not for targeted to becoming proficient in a specific assembly language.
@@ -92,6 +109,8 @@ There is no short-cut. Just read the entire book and solve all the exercises.
   * Reference on optimization using C and a bit of x86 assembly
   * Starts from the 8088 up to today
   * Special focus on low-level graphics optimization
+
+If you want to be expert of C programming, visit https://leetcode.com/. Good luck!
 
 ## <a name="Applications"></a>Applications
 
@@ -160,16 +179,17 @@ Join the Linux community and participate in development.
     * Never start with the latest version, v2.6 is enough!
     * Use qemu and gdb to run the kernel source line by line
       * http://stackoverflow.com/questions/11408041/how-to-debug-the-linux-kernel-with-gdb-and-qemu
-      * https://gurugio.kldp.net/wiki/wiki.php/howto_debug_kernel
+      * https://github.com/gurugio/linuxdeveloptip/blob/master/qemu-gdb-kdump.md
     * Use busybox to make the simplest filesystem that takes only 1-second to boot
-      * https://gurugio.kldp.net/wiki/wiki.php/qemu_kernel
+      * https://github.com/gurugio/linuxdeveloptip/blob/master/minikernelwithbusybox.md
 * [The Eudyptula Challenge](http://eudyptula-challenge.org/)
+  * _Sadly, the challenge does not accept new challenger because there is no challenge anymore._ The maintainer said he/she is planning new format. I wish it comes back ASAP.
   * This is like an awesome private teacher who guide you what to do.
   * If you don't know what to do, just start this.
 * [Block layer and device driver(translation in progress)](https://github.com/gurugio/book_linuxkernel_blockdrv)
   * start from a simple block device driver example (Ramdisk) with multi-queue mode
   * go forward to block layer
-  * _need help for translation_
+  * _need help for translation_: I started the translation recently and aim to finish until July.
 * [md driver of Linux kernel(in progress)](https://github.com/gurugio/book_linuxkernel_md)
   * how mdadm tool works and how it calls md driver
   * how md driver works
@@ -184,6 +204,15 @@ Check when you need something
 * [Julia Evans's posting: You can be a kernel hacker!](http://jvns.ca/blog/2014/09/18/you-can-be-a-kernel-hacker/)
   * guide to start kernel programming
 
+### <a name="Other-applications"></a>Other application
+
+Yes, you might not be interested in Linux or firmware. If so, you can find other applications:
+* Windows system programming & device driver
+* Security
+* Reverse engineering
+
+I don't have any knowledge about those applications. Please send me any information for beginners.
+
 ## <a name="Future-of-low-level-programming"></a>Future of low-level programming
 
 I do not know the future, but I keep my eye on RUST.
@@ -191,6 +220,7 @@ I do not know the future, but I keep my eye on RUST.
 
 If I could have one week free and alone, I would learn RUST.
 That is because RUST is the latest language with which I can develop Linux device driver.
+* https://github.com/tsgates/rust.ko
 
 IoT is new trend, so it's worth to check what OSs are for IoT.
 ARM, Samsung and some companies has their own realtime OS but sadly many of them are close source.
@@ -200,6 +230,13 @@ But Linux Foundation also has a solution: Zephyr
 Typical cloud server has so many layers, for instance, host OS, kvm driver, qemu process, guest OS and service application. So container has been developed to provide light virtualization. In near future, a new concept of OS, so-called library OS or Unikernel, would be replace the typical stack of SW for virtualization.
 * http://unikernel.org/
 
+
+## <a name="Job"></a>Job
+
 # <a name="Translation"></a>Translation
 
 Please send me the pull request if you'd like to translate this page. I'll list it here.
+
+* [Chinese](https://github.com/gurugio/lowlevelprogramming-university/blob/master/README_cn.md)
+* [Portuguese](https://github.com/gurugio/lowlevelprogramming-university/blob/master/README_pt.md)
+* [Italian](https://github.com/gurugio/lowlevelprogramming-university/blob/master/README_it.md)
